@@ -1,0 +1,21 @@
+--Go to /auth
+
+--Tests
+
+--Choose snippet script (Response body: JSON value check) - (Set an environment variable)   OR
+
+    var jsonData = JSON.parse(responseBody);
+tests["Access token was not empty"] = jsonData.access_token !== "";
+
+postman.setEnvironmentVariable("jwt_token", jsonData.access_token);
+
+
+
+--Send
+
+
+--Go to GET /item/</name>
+
+--Authorization -- JWT {{jwt_token}}
+
+--Send
